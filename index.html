@@ -4,24 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Gallery</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
         background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
         color: #fff;
         min-height: 100vh;
+        font-family: system-ui, -apple-system, sans-serif;
+        padding: 2rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .intro-text {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1.25rem;
+        border-radius: 0.5rem;
+        backdrop-filter: blur(5px);
+        margin-bottom: 2rem;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 576px) {
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 992px) {
+        .gallery-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
       }
 
       .gallery-item {
         cursor: pointer;
         transition: transform 0.3s ease;
         position: relative;
-        overflow: hidden;
-        border-radius: 8px;
+        border-radius: 0.5rem;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        aspect-ratio: 4/3;
       }
 
       .gallery-item:hover {
@@ -30,7 +66,7 @@
 
       .gallery-item img {
         width: 100%;
-        height: 300px;
+        height: 100%;
         object-fit: cover;
       }
 
@@ -55,42 +91,29 @@
         left: 50%;
         transform: translate(-50%, -50%);
       }
-
-      .intro-text {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 20px;
-        border-radius: 8px;
-        backdrop-filter: blur(5px);
-        margin: 20px 0;
-      }
     </style>
   </head>
   <body>
-    <div class="container py-5">
+    <div class="container">
       <div class="intro-text">
-        <p class="mb-0">Click on the image to expand.</p>
+        <p>
+          Exploring the intersection of technology and visual design through
+          dynamic imagery.
+        </p>
       </div>
 
-      <div class="row g-4">
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="gallery-item">
-            <img src="1.jpg" alt="Tech Image 1" />
-          </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="1.jpg" alt="Tech Image 1" />
         </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="gallery-item">
-            <img src="2.jpg" alt="Tech Image 2" />
-          </div>
+        <div class="gallery-item">
+          <img src="2.jpg" alt="Tech Image 2" />
         </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="gallery-item">
-            <img src="3.jpg" alt="Tech Image 3" />
-          </div>
+        <div class="gallery-item">
+          <img src="3.jpg" alt="Tech Image 3" />
         </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="gallery-item">
-            <img src="4.jpg" alt="Tech Image 4" />
-          </div>
+        <div class="gallery-item">
+          <img src="4.jpg" alt="Tech Image 4" />
         </div>
       </div>
     </div>
