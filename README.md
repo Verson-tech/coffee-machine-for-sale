@@ -9,7 +9,7 @@ This is a comprehensive web application for showcasing and selling coffee machin
 ## Live Website
 
 ```markdown
-[`click here to go to the website`](https://verson-tech.github.io/coffee-machine-for-sale/)
+[click here to go to the website](https://verson-tech.github.io/coffee-machine-for-sale/)
 ```
 
 ## Features
